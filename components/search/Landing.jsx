@@ -69,19 +69,19 @@ class Landing extends React.Component {
   }
 
   handleTextOnChange() {
-    this.setState({ countryNameFilter: event.target.value });
+    this.setState({ countryNameFilter: event.target.value, currentPage: 1 });
   }
 
   handleCurrencyOnChange() {
-    this.setState({ currencyVal: event.target.value })
+    this.setState({ currencyVal: event.target.value, currentPage: 1 })
   }
   handleRegionOnChange() {
-    this.setState({ countryRegFilter: event.target.value })
+    this.setState({ countryRegFilter: event.target.value, currentPage: 1 })
   }
   handleCurrentPage() {
     this.setState({ currentPage: Number(event.target.id) })
   }
-  
+
   handleDecreasePage() {
     if (this.state.currentPage > 1) {
       this.setState({ currentPage: this.state.currentPage - 1 })
@@ -147,7 +147,7 @@ class Landing extends React.Component {
     const indexOfFirstCountry = indexOfLastCountry - this.state.cardsPerPage;
     const currentCountry = countriesToShow.slice(indexOfFirstCountry, indexOfLastCountry)
 
-    
+
     return (
       <Container>
         <Title>Countries List</Title>

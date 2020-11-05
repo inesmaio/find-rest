@@ -35,22 +35,9 @@ const Pagination = ({
         linksToShow.push(i);
     }
 
-    // if (currentPage > 3) {
-    //     console.log((currentPage - 1) + linksPerPage);
-    //     const indexOfLastLink = (currentPage - 1) + linksPerPage;
-    //     return indexOfLastLink
-    // }
-    // else {
-    //     console.log("hello")
-    //     const indexOfLastLink = linksPerPage
-    //     return indexOfLastLink
-    // }
-    const indexOfLastLink = (currentPage <= 3 ? 0 : currentPage - 3) + linksPerPage;
-    const indexOfFirstLink = indexOfLastLink - linksPerPage;
+    const indexOfLastLink = currentPage <= 3 ? 5 : currentPage >= linksToShow.length - 2  ? linksToShow.length : currentPage - 3 + linksPerPage ;
+    const indexOfFirstLink = indexOfLastLink <= 3 ? 0 : indexOfLastLink  - linksPerPage;
     const currentLink = linksToShow.slice(indexOfFirstLink, indexOfLastLink);
-
-    console.log("current page: ",currentPage, "index of Last: ", indexOfLastLink, "index of first: ", indexOfFirstLink, currentLink)
-
 
     return (
         <List id="page-numbers">
