@@ -34,11 +34,22 @@ const Pagination = ({
     for (let i = 1; i <= linksToDisplay; i++) {
         linksToShow.push(i);
     }
-    const indexOfLastLink = (currentPage - 1) + linksPerPage;
+
+    // if (currentPage > 3) {
+    //     console.log((currentPage - 1) + linksPerPage);
+    //     const indexOfLastLink = (currentPage - 1) + linksPerPage;
+    //     return indexOfLastLink
+    // }
+    // else {
+    //     console.log("hello")
+    //     const indexOfLastLink = linksPerPage
+    //     return indexOfLastLink
+    // }
+    const indexOfLastLink = (currentPage <= 3 ? 0 : currentPage - 3) + linksPerPage;
     const indexOfFirstLink = indexOfLastLink - linksPerPage;
     const currentLink = linksToShow.slice(indexOfFirstLink, indexOfLastLink);
 
-    console.log(indexOfLastLink, indexOfFirstLink, )
+    console.log("current page: ",currentPage, "index of Last: ", indexOfLastLink, "index of first: ", indexOfFirstLink, currentLink)
 
 
     return (
@@ -49,7 +60,6 @@ const Pagination = ({
             </PageNumbers>
             {currentLink.map(number => {
                 if (currentPage === number) {
-                    console.log("Hello");
                     return <PageNumbers
                         key={number}
                         id={number}
@@ -57,7 +67,6 @@ const Pagination = ({
                         <b>{number}</b>
                     </PageNumbers>
                 } else {
-                    console.log("Else");
                     return <PageNumbers
                         key={number}
                         id={number}
