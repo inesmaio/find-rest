@@ -1,5 +1,5 @@
 import React from "react"
-import { ContainerColumn, Form_Lables, Form_Inputs } from "./dropdown.filter.style";
+import { ContainerColumn, Form_Lables, Form_Inputs } from "./filter.style";
 
 class CountryNameFilter extends React.Component {
     render() {

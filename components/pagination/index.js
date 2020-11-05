@@ -1,0 +1,1 @@
+export { defautl as Pagination } from "./pagination.nav.component"

@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerColumn, Form_DropDown, Form_Lables } from './dropdown.filter.style';
+import { ContainerColumn, Form_DropDown, Form_Lables } from './filter.style';
 
 const DropDownComponent = ({
     label,

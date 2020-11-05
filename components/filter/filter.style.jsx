@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-
-
 export const ContainerColumn = styled.section`
   display: flex;
   flex-direction: column;

@@ -1,51 +1,10 @@
 import React from "react";
-import styled from "styled-components";
-import { DropDown } from '../filter';
-import CountryNameFilter from '../filter/input.country.name.filter.component';
-import CountryCard from '../cards/countries.cards.component';
+import { Container, ContainerColumn, ContainerRow, Form, Title } from "./landing.style";
 import { fetchCountries } from "../../services/countries.api.service";
 import { getRegions, getCurrencies } from "../../utils/countries.utils";
-import Pagination from "../pagination/pagination.numbers.component"
-
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
-  background: #b0cfc5;
-  color: #385f71;
-`;
-
-const ContainerColumn = styled.section`
-  display: flex;
-  flex-direction: column;
-  width: 80vw;
-  background: #b0cfc5;
-  color: #385f71;
-`
-const ContainerRow = styled.section`
-  display: flex;
-  flex-direction: row;
-  background: #b0cfc5;
-  color: #385f71;
-`
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: normal;
-  margin: 20px;
-  width: 20vw;
-`;
-
-const Title = styled.h1`
-  font-size: 40px;
-  text-shadow: 5px 5px 10px #F2F7F6;
-  text-align: center;
-  color: #a95a4c;
-`
-
+import { CountryCard } from '../cards';
+import { DropDown, CountryNameFilter } from '../filter';
+import { Pagination } from '../pagination';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -59,6 +18,7 @@ class Landing extends React.Component {
       cardsPerPage: 6,
       loading: false,
     }
+
     this.handleTextOnChange = this.handleTextOnChange.bind(this);
     this.handleCurrencyOnChange = this.handleCurrencyOnChange.bind(this);
     this.handleRegionOnChange = this.handleRegionOnChange.bind(this);
@@ -75,9 +35,11 @@ class Landing extends React.Component {
   handleCurrencyOnChange() {
     this.setState({ currencyVal: event.target.value, currentPage: 1 })
   }
+
   handleRegionOnChange() {
     this.setState({ countryRegFilter: event.target.value, currentPage: 1 })
   }
+
   handleCurrentPage() {
     this.setState({ currentPage: Number(event.target.id) })
   }
@@ -87,13 +49,13 @@ class Landing extends React.Component {
       this.setState({ currentPage: this.state.currentPage - 1 })
     }
   }
+
   handleIncreasePage() {
     const linksNum = this.state.countries.filter(this.showDisplayCountry.bind(this)).length;
     if (this.state.currentPage < (linksNum / this.state.cardsPerPage)) {
       this.setState({ currentPage: this.state.currentPage + 1 })
     }
   }
-
 
   componentWillMount() {
     this.loadData();
@@ -110,7 +72,6 @@ class Landing extends React.Component {
     })
   }
 
-
   isCountryRegionFilter(country) {
     return !this.state.countryRegFilter || country.region.toUpperCase().includes(this.state.countryRegFilter.toUpperCase())
   }
@@ -126,7 +87,6 @@ class Landing extends React.Component {
   showDisplayCountry(country) {
     return this.isCountryNameFilter(country) && this.isCountryCurrencyFilter(country) && this.isCountryRegionFilter(country)
   }
-
 
   async loadData() {
     this.setState({ loading: true });
@@ -146,7 +106,6 @@ class Landing extends React.Component {
     const indexOfLastCountry = this.state.currentPage * this.state.cardsPerPage;
     const indexOfFirstCountry = indexOfLastCountry - this.state.cardsPerPage;
     const currentCountry = countriesToShow.slice(indexOfFirstCountry, indexOfLastCountry)
-
 
     return (
       <Container>

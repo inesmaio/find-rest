@@ -1,24 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-
-
-const List = styled.ul`
-    list-style-type:none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-`
-
-const PageNumbers = styled.li`
-    border: 2px solid #385f71;
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-    padding: 4px;
-    cursor: pointer;
-    text-aling: center;
-    
-`
+import { List, PageNumbers } from "./pagination.nav.style"
 
 const Pagination = ({
     clickHandler,
@@ -35,8 +16,8 @@ const Pagination = ({
         linksToShow.push(i);
     }
 
-    const indexOfLastLink = currentPage <= 3 ? 5 : currentPage >= linksToShow.length - 2  ? linksToShow.length : currentPage - 3 + linksPerPage ;
-    const indexOfFirstLink = indexOfLastLink <= 3 ? 0 : indexOfLastLink  - linksPerPage;
+    const indexOfLastLink = currentPage <= 3 ? 5 : currentPage >= linksToShow.length - 2 ? linksToShow.length : currentPage - 3 + linksPerPage;
+    const indexOfFirstLink = indexOfLastLink <= 3 ? 0 : indexOfLastLink - linksPerPage;
     const currentLink = linksToShow.slice(indexOfFirstLink, indexOfLastLink);
 
     return (
