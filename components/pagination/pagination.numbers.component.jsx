@@ -38,7 +38,7 @@ const Pagination = ({
     const indexOfFirstLink = indexOfLastLink - linksPerPage;
     const currentLink = linksToShow.slice(indexOfFirstLink, indexOfLastLink);
 
-    console.log(indexOfLastLink, indexOfFirstLink, currentLink)
+    console.log(indexOfLastLink, indexOfFirstLink, )
 
 
     return (
