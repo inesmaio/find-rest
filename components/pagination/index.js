@@ -1,1 +1,1 @@
-export { defautl as Pagination } from "./pagination.nav.component"
+export { default as Pagination } from "./pagination.nav.component"
