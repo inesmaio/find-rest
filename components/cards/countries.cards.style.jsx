@@ -16,8 +16,8 @@ export const List = styled.ul`
   line-height: 20px;
 `
 export const ListItems = styled.li`
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   margin: 30px;
   padding: 15px 40px;
 
