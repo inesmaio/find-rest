@@ -10,7 +10,6 @@ export const ContainerColumn = styled.section`
 export const Form_DropDown = styled.select`
   margin: 15px;
   padding: 15px;
-  width: 100%;
 
   font-size: 15px;
   color: #283044;
@@ -43,7 +42,6 @@ export const Form_Lables = styled.label`
 export const Form_Inputs = styled.input`
   margin: 15px;
   padding: 15px;
-  width: 100%;
 
   font-size: 15px;
   color: #283044;
