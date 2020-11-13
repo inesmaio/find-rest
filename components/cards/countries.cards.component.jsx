@@ -6,7 +6,7 @@ class CountryCard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            cardsPerPage: 5,
+            cardsPerPage: 6,
         }
     }
     render() {
