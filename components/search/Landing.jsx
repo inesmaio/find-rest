@@ -1,21 +1,22 @@
 import React from "react";
-import { Container, ContainerColumn, ContainerRow, Form, Title } from "./landing.style";
+import { Container, ContainerColumn, ContainerRow, Title, PopUpCointainer } from "./landing.style";
 import { fetchCountries } from "../../services/countries.api.service";
-import { getRegions, getCurrencies } from "../../utils/countries.utils";
 import { CountryCard } from '../cards';
-import { DropDown, CountryNameFilter } from '../filter';
+import { FilterNav } from '../filter';
 import { Pagination } from '../pagination';
+import { CountryDetail } from "../quick.view.countries" // TODO: Fix import with index
 
 class Landing extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       countryNameFilter: "",
-      countryRegFilter: "",
       currencyVal: "",
+      countryRegFilter: "",
       countries: [],
       currentPage: 1,
       cardsPerPage: 6,
+      countryName: "",
       loading: false,
     }
 
@@ -25,6 +26,8 @@ class Landing extends React.Component {
     this.handleCurrentPage = this.handleCurrentPage.bind(this);
     this.handleIncreasePage = this.handleIncreasePage.bind(this);
     this.handleDecreasePage = this.handleDecreasePage.bind(this);
+    this.handleQuickView = this.handleQuickView.bind(this);
+    this.handleExitQuickView = this.handleExitQuickView.bind(this)
 
   }
 
@@ -55,6 +58,14 @@ class Landing extends React.Component {
     if (this.state.currentPage < (linksNum / this.state.cardsPerPage)) {
       this.setState({ currentPage: this.state.currentPage + 1 })
     }
+  }
+
+  handleQuickView(country) {
+    this.setState({ countryName: country.name })
+  }
+
+  handleExitQuickView() {
+    this.setState({ countryName: "" })
   }
 
   componentWillMount() {
@@ -99,52 +110,45 @@ class Landing extends React.Component {
       this.setState({ loading: false })
     }
   }
-
   render() {
-    // Get current countries
-    const countriesToShow = this.state.countries.filter(this.showDisplayCountry.bind(this));
-    const indexOfLastCountry = this.state.currentPage * this.state.cardsPerPage;
-    const indexOfFirstCountry = indexOfLastCountry - this.state.cardsPerPage;
-    const currentCountry = countriesToShow.slice(indexOfFirstCountry, indexOfLastCountry)
-
     return (
       <Container>
         <Title>Countries List</Title>
+        {!!this.state.countryName &&
+          <PopUpCointainer
+            onClick={this.handleExitQuickView}>
+            <CountryDetail
+              country={this.state.countries.find(c => c.name === this.state.countryName)}
+              funcGetFlag={this.getFlag.bind(this)}
+            />
+          </PopUpCointainer>
+        }
         <ContainerRow>
           <ContainerRow>
-            <Form>
-              <CountryNameFilter
-                value={this.state.countryNameFilter}
-                handler={this.handleTextOnChange}
-              />
-              <DropDown
-                label="Region"
-                id="region"
-                name="region"
-                value={this.state.countryRegFilter}
-                options={getRegions(this.state.countries)}
-                handler={this.handleRegionOnChange}
-              />
-              <DropDown
-                label="Currency"
-                id="currency"
-                name="currency"
-                value={this.state.currencyVal}
-                options={getCurrencies(this.state.countries)}
-                handler={this.handleCurrencyOnChange}
-              />
-            </Form>
+            <FilterNav
+              countries={this.state.countries}
+              countryNameFilter={this.state.countryNameFilter}
+              regionVal={this.state.countryRegFilter}
+              currVal={this.state.currencyVal}
+              handlerNameFilter={this.handleTextOnChange}
+              handlerRegionFilter={this.handleRegionOnChange}
+              handlerCurrFilter={this.handleCurrencyOnChange}
+            />
           </ContainerRow>
           <ContainerColumn>
             <CountryCard
-              countriesArray={currentCountry}
+              showDisplayCountry={this.showDisplayCountry.bind(this)}
+              countries={this.state.countries}
+              currentPage={this.state.currentPage}
               funcGetFlag={this.getFlag.bind(this)}
+              onClickHandler={this.handleQuickView}
             />
             <Pagination
+              countries={this.state.countries}
+              showDisplayCountry={this.showDisplayCountry.bind(this)}
               clickHandler={this.handleCurrentPage}
               increaseHandler={this.handleIncreasePage}
               decreaseHandler={this.handleDecreasePage}
-              countriesToShow={countriesToShow.length}
               currentPage={this.state.currentPage}
               cardsPerPage={this.state.cardsPerPage}
             />

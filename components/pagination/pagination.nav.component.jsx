@@ -2,15 +2,17 @@ import React from "react";
 import { List, PageNumbers } from "./pagination.nav.style"
 
 const Pagination = ({
+    countries,
     clickHandler,
-    countriesToShow,
     decreaseHandler,
     increaseHandler,
     cardsPerPage,
-    currentPage
+    currentPage,
+    showDisplayCountry
 }) => {
+    const countriesToShow = countries.filter(showDisplayCountry);
     const linksPerPage = 5;
-    const linksToDisplay = Math.ceil(countriesToShow / cardsPerPage);
+    const linksToDisplay = Math.ceil(countriesToShow.length / cardsPerPage);
     const linksToShow = [];
     for (let i = 1; i <= linksToDisplay; i++) {
         linksToShow.push(i);

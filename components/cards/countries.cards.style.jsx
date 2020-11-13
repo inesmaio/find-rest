@@ -6,7 +6,14 @@ export const ContainerColumn = styled.section`
   background: #b0cfc5;
   color: #385f71;
   padding: 0 20px;
-
+`
+export const ContainerRow = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #b0cfc5;
+  color: #385f71;
+  padding: 0 20px;
 `
 export const List = styled.ul`
   list-style-type: none;
@@ -35,4 +42,6 @@ export const SubTitle = styled.h2`
 `
 export const Flags = styled.img`
     margin: 4px;
+    box-shadow: 2px 2px 4px;
+    border-radius: 4px;
 `

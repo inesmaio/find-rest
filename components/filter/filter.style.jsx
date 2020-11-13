@@ -7,6 +7,14 @@ export const ContainerColumn = styled.section`
   color: #385f71;
   padding: 0 20px;
 `
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  margin: 20px;
+  width: 20vw;
+`;
+
 export const Form_DropDown = styled.select`
   margin: 15px;
   padding: 15px;

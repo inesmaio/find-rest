@@ -22,18 +22,19 @@ export const ContainerRow = styled.section`
   background: #b0cfc5;
   color: #385f71;
 `
-
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: normal;
-  margin: 20px;
-  width: 20vw;
-`;
-
 export const Title = styled.h1`
   font-size: 40px;
   text-shadow: 5px 5px 10px #F2F7F6;
   text-align: center;
   color: #a95a4c;
+`
+export const PopUpCointainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(176, 207, 197, 0.6);
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `

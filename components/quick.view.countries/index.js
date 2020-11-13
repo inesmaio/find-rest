@@ -1,0 +1,1 @@
+export { default as CountryDetail } from './quick.view.countries.component'
