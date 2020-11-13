@@ -16,7 +16,7 @@ const CountryDetail = ({
                     <ContainerRow> <p>{country.fullName}</p><p>{country.alpha3Code}</p></ContainerRow>
                     <p><strong>Capital: </strong>{country.capital}</p>
                     <p><strong>Region: </strong>{country.region}</p>
-                    <p><strong>Region Bloc: </strong>{country.regionBloc}</p>
+                    <p><strong>Region Bloc: </strong>{country.regionBloc.map(region => <span>{region.name} </span>)}</p>
                     <p><strong>Borders</strong><br /> {funcGetFlag(country.borders).map((linkToFlag, i) => <Flags src={linkToFlag} key={linkToFlag} width="30px" height="20px" />)}</p>
                 </InfoContainer>
                 <InfoContainer>
@@ -25,7 +25,7 @@ const CountryDetail = ({
                     <p><strong>Area: </strong>{country.area}</p>
                     <p><strong>Timezones: </strong>{country.timezones.map(time => <span>{time} </span>)}</p>
                     <p><strong>Languages: </strong>{country.languages.map(lang => <span>{lang.name} </span>)}</p>
-                    <p><strong>Calling Code: </strong>{country.callingCode}</p>
+                    <p><strong>Calling Code: </strong>{country.callingCode.map(code => <span>{code} </span>)}</p>
                 </InfoContainer>
             </ContainerRow>
         </MainContainer>

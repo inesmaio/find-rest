@@ -11,4 +11,6 @@ export const normalizeCountries = (countries) => countries.map(country => ({
     area: country.area,
     alphaCode: country.alpha3Code,
     flag: country.flag,
+    callingCode: country.callingCodes,
+    regionBloc: country.regionalBlocs
 }))
