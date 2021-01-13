@@ -3,16 +3,12 @@ import styled from "styled-components";
 export const ContainerColumn = styled.section`
   display: flex;
   flex-direction: column;
-  background: #b0cfc5;
-  color: #385f71;
   padding: 0 20px;
 `
 export const ContainerRow = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: #b0cfc5;
-  color: #385f71;
   padding: 0 20px;
 `
 export const List = styled.ul`
@@ -31,9 +27,16 @@ export const ListItems = styled.li`
   border-radius: 8px;
   appearance: none;
   border: 0px ;
-  background: #b0cfc5;
-  box-shadow:  9px 9px 25px #97b2a9, 
-               -9px -9px 25px #c9ece1;
+  background: linear-gradient(145deg, #d7f8ef, #b5d1c9);
+  box-shadow:  7px 7px 40px #a5beb7,
+               -7px -7px 40px #edffff;
+
+  cursor: pointer;
+  &:active{
+    background: linear-gradient(145deg, #b5d1c9, #d7f8ef);
+    box-shadow:  7px 7px 40px #a5beb7,
+                 -7px -7px 40px #edffff;
+  }
 `
 export const SubTitle = styled.h2`
   font-size: 20px;

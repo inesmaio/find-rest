@@ -7,6 +7,8 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #c9e8df;
+    color: #385f71;
     
   }
 `

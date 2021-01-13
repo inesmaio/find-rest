@@ -5,22 +5,16 @@ export const Container = styled.div`
   flex-direction: column;
   min-width: 100vw;
   min-height: 100vh;
-  background: #b0cfc5;
-  color: #385f71;
 `;
 
 export const ContainerColumn = styled.section`
   display: flex;
   flex-direction: column;
   width: 80vw;
-  background: #b0cfc5;
-  color: #385f71;
 `
 export const ContainerRow = styled.section`
   display: flex;
   flex-direction: row;
-  background: #b0cfc5;
-  color: #385f71;
 `
 export const Title = styled.h1`
   font-size: 40px;

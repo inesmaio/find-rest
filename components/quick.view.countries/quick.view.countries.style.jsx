@@ -19,9 +19,9 @@ export const MainContainer = styled.section`
   border-radius: 20px;
 
   color: #011936;
-  background: linear-gradient(145deg, #bcddd3, #9ebab1);
-  box-shadow:  7px 7px 16px #92aca4, 
-               -7px -7px 16px #cef2e6;
+  background: linear-gradient(145deg, #c9f1e6, #a9cbc2);
+  box-shadow:  10px 10px 12px #a7c8bf, 
+               -10px -10px 12px #d1faef;
   padding: 20px;
   width: 600px;
 `

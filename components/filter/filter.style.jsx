@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const ContainerColumn = styled.section`
   display: flex;
   flex-direction: column;
-  background: #b0cfc5;
-  color: #385f71;
   padding: 0 20px;
 `
 export const Form = styled.form`
@@ -20,16 +18,15 @@ export const Form_DropDown = styled.select`
   padding: 15px;
 
   font-size: 15px;
-  color: #283044;
 
   resize: none;
 
   border-radius: 8px;
   appearance: none;
   border: 0px ;
-  background: #b0cfc5;
-  box-shadow: inset 9px 9px 25px #97b2a9, 
-              inset -9px -9px 25px #c9ece1;
+  background: #c9e8df;
+  box-shadow: inset 8px 8px 29px #a1bab2, 
+              inset -8px -8px 29px #f1ffff;
 
   &::placeholder {
     color: brown;
@@ -52,14 +49,13 @@ export const Form_Inputs = styled.input`
   padding: 15px;
 
   font-size: 15px;
-  color: #283044;
 
   border-radius: 8px;
   border: 0px;
   appearance: none;
-  background: #b0cfc5;
-  box-shadow: inset 9px 9px 25px #97b2a9, 
-              inset -9px -9px 25px #c9ece1;
+  background: #c9e8df;
+  box-shadow: inset 8px 8px 29px #a1bab2, 
+              inset -8px -8px 29px #f1ffff;
               
   &::placeholder {
     color: #283044;
