@@ -22,7 +22,7 @@ export const List = styled.ul`
 export const ListItems = styled.li`
   width: 220px;
   height: 220px;
-  margin: 30px;
+  margin: 20px;
   padding: 15px 40px;
 
   border-radius: 8px;
