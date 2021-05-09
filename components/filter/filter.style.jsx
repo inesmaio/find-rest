@@ -24,9 +24,9 @@ export const Form_DropDown = styled.select`
   border-radius: 8px;
   appearance: none;
   border: 0px ;
-  background: #c9e8df;
-  box-shadow: inset 8px 8px 29px #a1bab2, 
-              inset -8px -8px 29px #f1ffff;
+  background: #ffffff;
+  box-shadow: inset 7px 7px 14px #c2c2c2,
+              inset -7px -7px 14px #ffffff;
 
   &::placeholder {
     color: brown;
@@ -53,9 +53,9 @@ export const Form_Inputs = styled.input`
   border-radius: 8px;
   border: 0px;
   appearance: none;
-  background: #c9e8df;
-  box-shadow: inset 8px 8px 29px #a1bab2, 
-              inset -8px -8px 29px #f1ffff;
+  background: #ffffff;
+  box-shadow: inset 7px 7px 14px #c2c2c2,
+              inset -7px -7px 14px #ffffff;
               
   &::placeholder {
     color: #283044;

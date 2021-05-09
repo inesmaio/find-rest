@@ -10,7 +10,12 @@ export const Container = styled.div`
 export const ContainerColumn = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 80vw;
+
+    @media (min-width: 1600px) {
+      width: 60vw
+  }
 `
 export const ContainerRow = styled.section`
   display: flex;
@@ -25,7 +30,7 @@ export const Title = styled.h1`
 export const PopUpCointainer = styled.div`
   width: 100%;
   height: 100%;
-  background-color: rgba(176, 207, 197, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   position: absolute;
   z-index: 1000;
   display: flex;

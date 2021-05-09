@@ -1,6 +1,6 @@
 import React from "react";
 import { ContainerColumn, ContainerRow, List, ListItems, SubTitle, Flags } from "./countries.cards.style"
-import render from "dom-serializer";
+
 
 class CountryCard extends React.Component {
     constructor(props) {

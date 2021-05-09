@@ -16,26 +16,32 @@ export const List = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   line-height: 20px;
 `
 export const ListItems = styled.li`
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   margin: 30px;
   padding: 15px 40px;
 
   border-radius: 8px;
   appearance: none;
   border: 0px ;
-  background: linear-gradient(145deg, #d7f8ef, #b5d1c9);
-  box-shadow:  7px 7px 40px #a5beb7,
-               -7px -7px 40px #edffff;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow:  7px 7px 40px #bfbfbf,
+               -7px -7px 40px #ffffff;
 
   cursor: pointer;
+  &:hover{
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow:  7px 7px 14px #c2c2c2,
+                -7px -7px 14px #ffffff;
+  }
   &:active{
-    background: linear-gradient(145deg, #b5d1c9, #d7f8ef);
-    box-shadow:  7px 7px 40px #a5beb7,
-                 -7px -7px 40px #edffff;
+    background: #ffffff;
+    box-shadow: inset 7px 7px 14px #c2c2c2,
+                inset -7px -7px 14px #ffffff;
   }
 `
 export const SubTitle = styled.h2`
